@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>tagInput</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        }
+
+        .tags-input-wrapper {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 4px;
+            max-width: 400px;
+            border: 1px solid #ccc
+        }
+
+        .tags-input-wrapper input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 150px;
+        }
+
+        .tags-input-wrapper .tag {
+            display: inline-block;
+            background-color: #009432;
+            color: white;
+            border-radius: 40px;
+            padding: 0px 3px 0px 7px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .tags-input-wrapper .tag a {
+            margin: 0 7px 3px;
+            display: inline-block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+        <input type="text" id="tag-input1">
+
+    <script src="index.js"></script>
+    <script>
+        var tagInput1 = new TagsInput({
+            selector: 'tag-input1',
+            duplicate : false,
+            max : 10
+        });
+
+        tagInput1.addData(["Python","Rubi","Go"])
+    
+    </script>
+</body>
+
+</html>
