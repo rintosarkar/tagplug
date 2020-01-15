@@ -54,17 +54,22 @@
     }
 
 
-    TagsInput.prototype.anyErrors = function(string){
-        if( this.options.max != null && this.arr.length >= this.options.max ){
-            console.log('max tags limit reached');
+    TagsInput.prototype.anyErrors = function (string) {
+        if (this.options.max != null && this.arr.length >= this.options.max) {
+            console.error('max tags limit reached');
             return true;
         }
-        
-        if(!this.options.duplicate && this.arr.indexOf(string) != -1 ){
-            console.log('duplicate found " '+string+' " ')
+    
+        if (!this.options.duplicate && this.arr.indexOf(string) != -1) {
+            console.error('duplicate found " ' + string + ' " ')
             return true;
         }
-
+    
+        if (this.options.validator != undefined && !this.options.validator(string)) {
+            console.error('Invalid input: ' + string)
+            return true;
+        }
+    
         return false;
     }
 
