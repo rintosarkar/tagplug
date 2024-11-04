@@ -107,6 +107,7 @@
             var str = tags.input.value.trim(); 
             if( !!(~[9 , 13 , 188].indexOf( e.keyCode ))  )
             {
+                e.preventDefault();
                 tags.input.value = "";
                 if(str != "")
                     tags.addTag(str);
